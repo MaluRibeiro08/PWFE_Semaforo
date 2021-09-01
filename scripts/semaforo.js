@@ -9,8 +9,14 @@ let idAuto
 const setTrafficLightOff = () => trafficLight.src = "./img/desligado.png"
 const setTrafficLightYellow = () => trafficLight.src = "./img/amarelo.png"
 
-const setTrafficLightRed = () => trafficLight.src = "./img/vermelho.png"
-
+const setTrafficLightRed = (evento) => 
+{
+    if(evento)
+    {
+        StopTrafficLightAuto()
+    }
+    trafficLight.src = "./img/vermelho.png"
+}
 const setTrafficLightGreen = () => trafficLight.src = "./img/verde.png"
 
 const verifyTrafficLightState = () =>
