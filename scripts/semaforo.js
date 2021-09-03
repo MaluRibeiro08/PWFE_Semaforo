@@ -6,9 +6,22 @@ let idAuto
 
 //FUNCOES
 
-const setTrafficLightOff = () => trafficLight.src = "./img/desligado.png"
-const setTrafficLightYellow = () => trafficLight.src = "./img/amarelo.png"
-
+const setTrafficLightOff = (evento) => 
+{
+    if(evento)
+    {
+        StopTrafficLightAuto()
+    }
+    trafficLight.src = "./img/desligado.png"
+}
+const setTrafficLightYellow = (evento) => 
+{
+    if(evento)
+    {
+        StopTrafficLightAuto()
+    }
+    trafficLight.src = "./img/amarelo.png"
+}
 const setTrafficLightRed = (evento) => 
 {
     if(evento)
@@ -17,8 +30,14 @@ const setTrafficLightRed = (evento) =>
     }
     trafficLight.src = "./img/vermelho.png"
 }
-const setTrafficLightGreen = () => trafficLight.src = "./img/verde.png"
-
+const setTrafficLightGreen = (evento) => 
+{
+    if (evento)
+    { 
+        StopTrafficLightAuto()
+    }
+    trafficLight.src = "./img/verde.png"
+}
 const verifyTrafficLightState = () =>
 {
     let trafficLightState = ""
@@ -69,7 +88,7 @@ const setTrafficLightAuto = () =>
     if (buttonSetTrafficLightAuto.textContent == "Automático")
     {
         idAuto = setInterval(changeTrafficLightState,500)
-        buttonSetTrafficLightAuto.textContent = "Parar"
+        buttonSetTrafficLightAuto.textContent = "Desligar"
     }
     else
     {
